@@ -1,8 +1,9 @@
-import title from "./title.js";
-import login from "./login.js";
+import button from "./Components/button.js";
+import login from "./Login/login.js";
+import title from "./Components/title.js"
 window.addEventListener("load", start, false);
 
 function start() {
-  title.init();
-  login.init();
+  button(login.loginHandler, "contentContainer");
+  title('titleContainer')
 }
