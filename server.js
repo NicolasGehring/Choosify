@@ -11,8 +11,8 @@ app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'ejs');
 
 app.get("/", (req, res) => {
-  console.log("got request");
   res.render('index.html')
 });
+
 
 app.listen(port, () => console.log(`Webapp running on Port: ${port}!`));

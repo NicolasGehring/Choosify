@@ -4,16 +4,60 @@ body {
   padding: 0px;
   margin: 0px;
   font-family: 'Roboto', sans-serif;
-
+  color: whitesmoke;
+  width: 100%;
+  height: 100%;
+  display: inline-grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1fr 2fr 1fr;
+  grid-gap: 15px;
 }
 
 .titleContainer {
-  color: #1db954;
+  grid-column: 2;
+  grid-row: 1;
+  display: inline-grid;
+  width: 100%;
+  
+  grid-template-columns: 1fr;
+  grid-template-rows: 2fr;
+  grid-row-gap: 0px;
+  
   text-align: center;
 }
 
 .titleContainer > h1 {
   color: #1db954;
   text-align: center;
-  font-size: 4em;
+  font-size: 7em;
+  grid-row: 1;
+  padding: 0px;
+  margin: 0px;
 }
+
+.titleContainer > h2 {
+  color: #1db954;
+  grid-row: 2;
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+}
+
+.contentContainer {
+  grid-column: 2;
+  grid-row: 2;
+  margin: auto auto;
+}
+
+
+
+#loginButton{
+  background-color: #1db954;
+  border: none;
+  font-size: 1em;
+  display: inline-block;
+  border-radius: 4px;
+  height:50px;
+    width:300px;
+
+} 

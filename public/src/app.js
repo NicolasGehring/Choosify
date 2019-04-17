@@ -1,8 +1,8 @@
-import { init } from "./title.js";
+import title from "./title.js";
+import login from "./login.js";
+window.addEventListener("load", start, false);
 
-
-window.addEventListener('load', start, false )
-
-function start(){
-    init()
+function start() {
+  title.init();
+  login.init();
 }
