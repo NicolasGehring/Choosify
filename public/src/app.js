@@ -7,6 +7,6 @@ function start() {
   //We clear the local storage so the title displaying works
   localStorage.clear();
 
-  button(login.loginHandler, "contentContainer");
+  button("Login with Spotify",'loginButton', login.loginHandler, "contentContainer");
   title('titleContainer')
 }

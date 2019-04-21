@@ -1,9 +1,9 @@
-export default function button(onclick, containerClass) {
+export default function button(text,id, onclick, containerClass) {
   let subTitleContainer = document.querySelector(`.${containerClass}`);
 
   var loginButton = document.createElement("button");
-  loginButton.innerHTML = "Login with Spotify";
+  loginButton.innerHTML = text;
   loginButton.onclick = onclick;
-  loginButton.setAttribute("id", "loginButton");
+  loginButton.setAttribute("id", id);
   subTitleContainer.appendChild(loginButton);
 }

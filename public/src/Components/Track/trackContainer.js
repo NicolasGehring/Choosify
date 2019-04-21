@@ -11,7 +11,6 @@ export default function trackContainer() {
   //Now we load the last track into our object
   current_track.populate().then(
     function(result) {
-      console.log("Worked"); // "Stuff worked!"
       //Now we rerender our displayed image
       console.log(current_track);
       appendHTML(current_track.exportAsHtml());
