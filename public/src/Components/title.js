@@ -1,5 +1,5 @@
-import isLoggedIn from "../services/isLoggedIn.js";
 import apiCaller from "../services/apiCaller.js";
+import isLoggedIn from "../Login/isLoggedIn.js";
 
 function generateTitle() {
   const greetings = ["my friend", "Pinzi"];
@@ -10,9 +10,9 @@ function generateTitle() {
 
 export default async  function title(containerClass) {
   let title = generateTitle();
-
   //We want to greet the user with his real name if he is logged in
-  if (isLoggedIn) {
+
+  if (isLoggedIn()) {
     title = await apiCaller.getSpotifyData("user").then(
       function(value) {
         return `Welcome ${value.display_name}`;

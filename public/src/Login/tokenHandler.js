@@ -1,3 +1,5 @@
+import login from "./login.js";
+
 var stateKey = "spotify_auth_state";
 
 function storeKey(key) {
@@ -29,17 +31,33 @@ function handleAccessToken() {
 
     if (!access_token || state == null || state !== storedState) {
       //Something was wrong with the login and the user get's redirected to login page
-      console.log("redirect", { access_token, state, storedState });
       window.location.href = "/";
     } else {
-      console.log("Store key")
       localStorage.removeItem(stateKey);
       storeKey(access_token);
       //Now go back to just /dashboard to get rid of the long url
       window.location.href = "/dashboard";
     }
   }
-  
 }
 
-export default {handleAccessToken}
+function refreshToken() {
+  //Redo the user login
+  login.loginHandler();
+  var params = getHashParams();
+  var access_token = params.access_token,
+    state = params.state,
+    storedState = localStorage.getItem(stateKey);
+
+  if (!access_token || state == null || state !== storedState) {
+    //Something was wrong with the login and the user get's redirected to login page
+    window.location.href = "/";
+  } else {
+    localStorage.removeItem(stateKey);
+    storeKey(access_token);
+    //Now go back to just /dashboard to get rid of the long url
+    window.location.href = "/dashboard";
+  }
+}
+
+export default { handleAccessToken, refreshToken };

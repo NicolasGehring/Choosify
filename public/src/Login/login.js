@@ -23,7 +23,8 @@ function loginHandler() {
   var state = generateRandomString(16);
 
   localStorage.setItem(stateKey, state);
-  var scope = "user-read-private user-read-email user-read-recently-played";
+
+  var scope = "user-read-private user-read-email user-read-currently-playing";
 
   var url = "https://accounts.spotify.com/authorize";
   url += "?response_type=token";
@@ -35,4 +36,4 @@ function loginHandler() {
   window.location = url;
 }
 
-export default {loginHandler}
+export default { loginHandler };
